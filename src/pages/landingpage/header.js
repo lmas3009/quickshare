@@ -5,7 +5,7 @@ const Header = () => {
                 <p>QuickShare</p>
             </div>
             <div className="flex gap-3">
-                <p className="bg-black p-2 rounded text-white pl-4 pr-4 cursor-pointer">Get started</p>
+                <a href="/auth" className="bg-black p-2 rounded text-white pl-4 pr-4 cursor-pointer">Get started</a>
             </div>
         </div>
     )

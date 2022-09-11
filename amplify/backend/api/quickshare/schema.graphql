@@ -1,0 +1,7 @@
+type NewProject @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  projectname: String!
+  filesurl: [String!]!
+  password: String!
+}
+ 

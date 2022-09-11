@@ -1,0 +1,11 @@
+{
+  "resourceName": "s3quicksharestorage",
+  "bucketName": "quickshare-storage",
+  "policyUUID": "4eeb98e5",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE"
+  ]
+}
