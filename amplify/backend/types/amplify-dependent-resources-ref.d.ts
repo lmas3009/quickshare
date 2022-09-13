@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "quickshare5ee3764c": {
+        "quickshare7847a67d": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "HostedUIDomain": "string",
@@ -12,17 +12,17 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientID": "string"
         }
     },
+    "storage": {
+        "s3quicksharestorage": {
+            "BucketName": "string",
+            "Region": "string"
+        }
+    },
     "api": {
         "quickshare": {
             "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
-        }
-    },
-    "storage": {
-        "s3quicksharestorage": {
-            "BucketName": "string",
-            "Region": "string"
         }
     }
 }

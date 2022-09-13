@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "quickshare5ee3764c_identitypool_5ee3764c",
+    "identityPoolName": "quickshare7847a67d_identitypool_7847a67d",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "quicks5ee3764c",
-    "userPoolName": "quickshare5ee3764c_userpool_5ee3764c",
+    "resourceNameTruncated": "quicks7847a67d",
+    "userPoolName": "quickshare7847a67d_userpool_7847a67d",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -27,10 +27,10 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "quicks5ee3764c_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "quicks7847a67d_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "5ee3764c",
-    "resourceName": "quickshare5ee3764c",
+    "sharedId": "7847a67d",
+    "resourceName": "quickshare7847a67d",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "manual",
     "hostedUI": true,
@@ -39,7 +39,7 @@
       "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://quickshare-dev.vercel.app/home/\"],\"LogoutURLs\":[\"https://quickshare-dev.vercel.app/\"]}",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://dev.d2ba7ivcx3r4em.amplifyapp.com/home\"],\"LogoutURLs\":[\"https://dev.d2ba7ivcx3r4em.amplifyapp.com/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

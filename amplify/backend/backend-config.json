@@ -1,6 +1,6 @@
 {
   "auth": {
-    "quickshare5ee3764c": {
+    "quickshare7847a67d": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -27,6 +27,13 @@
       }
     }
   },
+  "storage": {
+    "s3quicksharestorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
+  },
   "api": {
     "quickshare": {
       "service": "AppSync",
@@ -50,11 +57,11 @@
       }
     }
   },
-  "storage": {
-    "s3quicksharestorage": {
-      "service": "S3",
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
       "providerPlugin": "awscloudformation",
-      "dependsOn": []
+      "type": "manual"
     }
   }
 }

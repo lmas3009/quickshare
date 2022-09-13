@@ -4,4 +4,3 @@ type NewProject @model @auth(rules: [{allow: public}]) {
   userid: String!
   filesurl: [AWSJSON!]!
 }
- 
