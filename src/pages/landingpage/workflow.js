@@ -50,7 +50,7 @@ const Workflow = () => {
               3
             </p>
             <p className="w-48 text-center text-lg">
-              Attach files and add your password
+              Attach files
             </p>
           </div>
 
@@ -65,7 +65,7 @@ const Workflow = () => {
               4
             </p>
             <p className="w-48 text-center text-lg">
-              Share the link with password to your members
+              Share the link with your members
             </p>
           </div>
         </div>

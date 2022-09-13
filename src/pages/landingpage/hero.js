@@ -13,7 +13,7 @@ const Hero = () => {
         </span>
       </p>
       <p className="text-xl sm:text-2xl text-center p-5">
-        A platform to share your files with password encrypted
+        Upload file and share the link with your friends
       </p>
       <div className="bg-black text-white p-2 pl-5 pr-5 rounded cursor-pointer">
         <p>Share your first file</p>

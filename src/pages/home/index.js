@@ -1,53 +1,42 @@
 import React, { useEffect, useState } from "react";
 import Header from "./header";
-import { Auth, navItem } from "aws-amplify";
+import { Auth } from "aws-amplify";
 import history from "../../utils/history";
 import { DataStore } from "@aws-amplify/datastore";
 import { NewProject } from "../../models";
 import { IoOpen } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
-import { Storage } from "@aws-amplify/storage"
+import { Storage } from "@aws-amplify/storage";
 
 const Home = () => {
   const [data, setdata] = useState([]);
   const [uid, setuid] = useState("");
 
-  function getRandomColor() {
-    var letters = "BCDEF".split("");
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * letters.length)];
-    }
-    return color;
-  }
-
   useEffect(() => {
     Auth.currentAuthenticatedUser()
-      .then((res) => {
-        setdata(res["username"]);
+      .then(async (res) => {
+        setuid(res["username"]);
+        const _data = await DataStore.query(NewProject, (c) =>
+          c.userid("eq", res["username"])
+        );
+        setdata(_data);
       })
       .catch((err) => {
         history.push("/");
         history.go();
       });
-
-    const fetchData = async () => {
-      const _data = await DataStore.query(NewProject, (c) =>
-        c.userid("eq", uid)
-      );
-      setdata(_data);
-    };
-    fetchData();
-  }, [uid]);
+  });
 
   const DeleteProject = async (pid) => {
-
-    // await Storage.remove('test.txt');
     const modelToDelete = await DataStore.query(NewProject, pid);
-    DataStore.delete(modelToDelete);
-    history.go()
+    const data =
+      modelToDelete.filesurl === undefined
+        ? ""
+        : JSON.parse(modelToDelete.filesurl);
+    await Storage.remove(uid + "_3009_" + data[0].filename);
+    await DataStore.delete(modelToDelete);
+    history.go();
   };
-
 
   return (
     <div>
@@ -74,35 +63,34 @@ const Home = () => {
       </div>
 
       <div className="w-full flex flex-wrap gap-10 p-10 items-center justify-center poppins">
-        {Object.keys(data).length !== 0 || typeof data === "string"
-          ? Object.keys(data).map((key, index) => {
-              return (
-                <div
-                  key={key}
-                  className="bg-white shadow-md shadow-slate-500 rounded p-5 h-40 w-52 flex flex-col items-center justify-between"
-                  style={{
-                    backgroundColor: getRandomColor(),
-                  }}
-                >
-                  <p>{data[index].projectname}</p>
-                  <div className="flex gap-2 items-center justify-end">
-                    <a
-                      href={"/projectpage/" + data[index].id}
-                      className="text-xl cursor-pointer"
-                    >
-                      <IoOpen />
-                    </a>
-                    <p
-                      className="text-xl cursor-pointer"
-                      onClick={() => DeleteProject(data[index].id)}
-                    >
-                      <MdDelete />
-                    </p>
+        {Object.keys(data).length !== 0
+          ? typeof data !== "string"
+            ? Object.keys(data).map((key, index) => {
+                return (
+                  <div
+                    key={key}
+                    className="bg-white text-black shadow-xl shadow-current border-2 border-slate-600 rounded p-5 h-full w-52 flex flex-col items-start justify-between"
+                  >
+                    <p className="text-xl pb-2">{data[index].projectname}</p>
+                    <div className="flex gap-5 items-center justify-end">
+                      <a
+                        href={"/projectpage/" + data[index].id}
+                        className="text-sm flex items-center gap-1 cursor-pointer"
+                      >
+                        Open <IoOpen />
+                      </a>
+                      <p
+                        className="text-sm flex items-center gap-1 cursor-pointer"
+                        onClick={() => DeleteProject(data[index].id)}
+                      >
+                        Delete <MdDelete />
+                      </p>
+                    </div>
                   </div>
-                </div>
-              );
-            })
-          : "No projects are created"}
+                );
+              })
+            : "No Projects are created"
+          : "No Projects are created"}
       </div>
     </div>
   );

@@ -7,9 +7,8 @@ type NewProjectMetaData = {
 export declare class NewProject {
   readonly id: string;
   readonly projectname: string;
-  readonly password: string;
-  readonly filesurl: string[];
   readonly userid: string;
+  readonly filesurl: string[];
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<NewProject, NewProjectMetaData>);
