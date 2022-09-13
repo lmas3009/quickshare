@@ -6,6 +6,7 @@ import { DataStore } from "@aws-amplify/datastore";
 import { NewProject } from "../../models";
 import { IoOpen } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
+import { Storage } from "@aws-amplify/storage"
 
 const Home = () => {
   const [data, setdata] = useState([]);
@@ -40,7 +41,8 @@ const Home = () => {
   }, [uid]);
 
   const DeleteProject = async (pid) => {
-    console.log(pid);
+
+    // await Storage.remove('test.txt');
     const modelToDelete = await DataStore.query(NewProject, pid);
     DataStore.delete(modelToDelete);
     history.go()

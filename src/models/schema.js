@@ -27,7 +27,7 @@ export const schema = {
                 "filesurl": {
                     "name": "filesurl",
                     "isArray": true,
-                    "type": "String",
+                    "type": "AWSJSON",
                     "isRequired": true,
                     "attributes": [],
                     "isArrayNullable": false
@@ -84,5 +84,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "ebcf720c979725affb0eee8315bf6da2"
+    "version": "d02e659dd267b9b5888e61adbf64cf37"
 };

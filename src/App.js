@@ -4,6 +4,8 @@ import Home from "./pages/home";
 import NewProject from "./pages/home/newproject";
 import LandingPage from "./pages/landingpage"
 import ProjectPage from "./pages/home/projectpage"
+import PreviewPage from "./pages/home/previewpage"
+import ProjectPreview from "./pages/home/projectpreview";
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
         <Route path="/home" element={<Home/>}/>
         <Route path="/newproject" element={<NewProject/>}/>
         <Route path="/projectpage/:pid" element={<ProjectPage/>}/>
+        <Route path="/previewpage/:pid" element={<PreviewPage/>}/>
+        <Route path="/projectpreview/:pid" element={<ProjectPreview/>} />
       </Routes>
     </Router>
   );

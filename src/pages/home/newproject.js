@@ -19,7 +19,7 @@ const Newproject = () => {
     await DataStore.save(
       new NewProject({
         projectname: projectName,
-        filesurl: new Array("https://quickshare-storage185229-dev.s3.ap-south-1.amazonaws.com/public/readme.txt"),
+        filesurl: [{"file":"https://quickshare-storage185229-dev.s3.ap-south-1.amazonaws.com/public/readme.txt","filename":"Readme.txt"}],
         password: projectPass,
         userid: uid
       })
