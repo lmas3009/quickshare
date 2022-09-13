@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { DataStore } from "@aws-amplify/datastore";
+import { Auth } from "aws-amplify";
 import { NewProject } from "../../models";
 import Header from "./header";
 import history from "../../utils/history";
@@ -9,13 +10,18 @@ const Newproject = () => {
   const [projectPass, setprojectPass] = useState("");
   const [NameActive, setNameActive] = useState(false);
   const [NameError, setNameError] = useState("");
+  const [uid,setUid] = useState("")
 
   const CreateProject = async () => {
+    await Auth.currentUserInfo().then((res)=>{
+      setUid(res['username'])
+    })
     await DataStore.save(
       new NewProject({
         projectname: projectName,
-        filesurl: [],
+        filesurl: new Array("https://quickshare-storage185229-dev.s3.ap-south-1.amazonaws.com/public/readme.txt"),
         password: projectPass,
+        userid: uid
       })
     )
       .then((res) => {

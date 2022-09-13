@@ -1,6 +1,6 @@
 {
   "auth": {
-    "quickshare59848da7": {
+    "quickshare5ee3764c": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -27,13 +27,6 @@
       }
     }
   },
-  "storage": {
-    "s3quicksharestorage": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": []
-    }
-  },
   "api": {
     "quickshare": {
       "service": "AppSync",
@@ -55,6 +48,13 @@
           ]
         }
       }
+    }
+  },
+  "storage": {
+    "s3quicksharestorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   }
 }

@@ -8,12 +8,12 @@ const Header = () => {
         <p>QuickShare</p>
       </div>
       <div className="flex gap-3">
-        <p className="flex items-center gap-1 cursor-pointer">
+        <a href="/home" className="flex items-center gap-1 cursor-pointer">
           <span>
             <BiHomeSmile />
           </span>
           Home
-        </p>
+        </a>
         <p
           className="flex items-center gap-1 cursor-pointer"
           onClick={() => {

@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-quickshare-dev-113752-authRole",
-      "UnauthRoleArn": "arn:aws:iam::693972763599:role/amplify-quickshare-dev-113752-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::693972763599:role/amplify-quickshare-dev-113752-authRole",
+      "AuthRoleName": "amplify-quickshare-dev-185229-authRole",
+      "UnauthRoleArn": "arn:aws:iam::693972763599:role/amplify-quickshare-dev-185229-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::693972763599:role/amplify-quickshare-dev-185229-authRole",
       "Region": "ap-south-1",
-      "DeploymentBucketName": "amplify-quickshare-dev-113752-deployment",
-      "UnauthRoleName": "amplify-quickshare-dev-113752-unauthRole",
-      "StackName": "amplify-quickshare-dev-113752",
-      "StackId": "arn:aws:cloudformation:ap-south-1:693972763599:stack/amplify-quickshare-dev-113752/129666b0-3198-11ed-bf36-06924bac130a",
-      "AmplifyAppId": "d323xx0w7uc4ov"
+      "DeploymentBucketName": "amplify-quickshare-dev-185229-deployment",
+      "UnauthRoleName": "amplify-quickshare-dev-185229-unauthRole",
+      "StackName": "amplify-quickshare-dev-185229",
+      "StackId": "arn:aws:cloudformation:ap-south-1:693972763599:stack/amplify-quickshare-dev-185229/f44859f0-329d-11ed-a1d5-06c060b35012",
+      "AmplifyAppId": "d2ldc9vcjxbwbk"
     },
     "categories": {
       "auth": {
-        "quickshare59848da7": {}
+        "quickshare5ee3764c": {}
       }
     }
   }
