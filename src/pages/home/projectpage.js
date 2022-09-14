@@ -48,7 +48,7 @@ const ProjectPage = () => {
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="bg-rose-700 text-white p-2 pl-4 pr-4 rounded cursor-pointer mt-5 sm:m-0">
             <CopyToClipboard
-              text={"https://quickshare-dev.vercel.app/projectpreview/" + pid}
+              text={"http://localhost:3000/projectpreview/" + pid}
               onCopy={() => alert("coppied")}
             >
               <p>Share Link</p>
